@@ -1,38 +1,42 @@
-= wbxml
+# wbxml
 
-* http://wbxml.rubyforge.org/
-
-== DESCRIPTION:
+http://wbxml.rubyforge.org/
 
 Convert XML to WBXML for WAP mobile phone services
 wbxml is a simple Ruby wrapper for the wbxml2 library.
 
-== FEATURES/PROBLEMS:
+## Features of this fork
 
-* WBXML.xml_to_wbxml - converts XML to WBXML
-* WBXML.wbxml_to_xml - converts WBXML to XML
+* libwbxml are bundled with the repo (no need to do extra work to install the gem)
+* Added support for ruby 1.9+ (dropped support for ruby 1.8+)
 
-== SYNOPSIS:
+## Usage
 
-  xml = File.open("message.xml"){|f| f.read}
-  wbxml = WBXML.xml_to_wbxml xml
-  $output.print wbxml
+```ruby
+require 'wbxml'
 
-== REQUIREMENTS:
+# WBXML.xml_to_wbxml(...) converts XML to WBXML
+# WBXML.wbxml_to_xml(...) converts WBXML to XML
 
-* a working wbxml2
-** OSX: port install wbxml2
-** Debian: apt-get install libwbxml2
+xml = <<END
+<?xml version="1.0"?>
+<!DOCTYPE si PUBLIC "-//WAPFORUM//DTD SI 1.0//EN" "http://www.wapforum.org/DTD/si.dtd">
+<si>
+  <indication href="http://wap.yahoo.com">
+    m-Qube Msg
+  </indication>
+</si>
+END
 
-== INSTALL:
+w = WBXML.xml_to_wbxml(xml)
 
-* sudo gem install
+=> "\003\005j\000E\306\f\003wap.yahoo.com\000\001\003m-Qube Msg\000\001\001"
 
-== LICENSE:
+```
 
-(The MIT License)
+## License
 
-Copyright (c) 2008 FIX
+MIT
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
