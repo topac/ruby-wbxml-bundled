@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.description = %q{Wrapper for wbxml2, a WAP<->XML converter}
   s.email = ["cjheath@rubyforge.org"]
   s.extensions = ["ext/wbxml/extconf.rb"]
-  s.extra_rdoc_files = ["History.txt", "License.txt", "Manifest.txt", "README.txt"]
-  s.files = ["History.txt", "License.txt", "Manifest.txt", "README.txt", "config/hoe.rb", "config/requirements.rb", "lib/wbxml/version.rb", "setup.rb", "test/test_wbxml_extn.rb"] + Dir.glob("ext/wbxml/**/*")
+  s.extra_rdoc_files = ["History.txt", "License.txt", "Manifest.txt", "README.md"]
+  s.files = ["History.txt", "License.txt", "Manifest.txt", "README.md", "config/hoe.rb", "config/requirements.rb", "lib/wbxml/version.rb", "setup.rb", "test/test_wbxml_extn.rb"] + Dir.glob("ext/wbxml/**/*")
   s.homepage = %q{http://wbxml.rubyforge.org}
-  s.rdoc_options = ["--main", "README.txt"]
+  s.rdoc_options = ["--main", "README.md"]
   s.require_paths = ["lib", "ext/wbxml"]
   s.rubyforge_project = %q{wbxml}
   s.rubygems_version = %q{1.4.2}
