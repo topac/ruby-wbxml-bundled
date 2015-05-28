@@ -20,7 +20,7 @@ xml_to_wbxml(VALUE self, VALUE xml_source)
 	WB_ULONG	wbxml_len = 0;
 	VALUE		value;
 
-	Check_SafeStr(xml_source);
+	SafeStringValue(xml_source);
 	if (TYPE(xml_source) != T_STRING)
 		rb_raise(rb_eTypeError, "parameter to xml_to_wbxml must be a string");
 	xml = (WB_UTINY*)StringValuePtr(xml_source);
@@ -50,7 +50,7 @@ wbxml_to_xml(VALUE self, VALUE wbxml_source)
 	WB_UTINY*	xml = NULL;		/* Must be null terminated */
 	VALUE		value;
 
-	Check_SafeStr(wbxml_source);
+	SafeStringValue(wbxml_source);
 	if (TYPE(wbxml_source) != T_STRING)
 		rb_raise(rb_eTypeError, "parameter to wbxml_to_xml must be a string");
 	wbxml = (WB_UTINY*)StringValuePtr(wbxml_source);
