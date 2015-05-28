@@ -5,10 +5,11 @@ http://wbxml.rubyforge.org/
 Convert XML to WBXML for WAP mobile phone services
 wbxml is a simple Ruby wrapper for the wbxml2 library.
 
-## Features of this fork
+## Features
 
 * libwbxml are bundled with the repo (no need to do extra work to install the gem)
-* Added support for ruby 1.9+ (dropped support for ruby 1.8+)
+* Added support for __ruby 1.9+__ (dropped support for ruby 1.8+)
+* Added support for __Windows__. You need to place [expat libraries and headers](http://sourceforge.net/projects/mingw/files/MinGW/Extension/expat/expat-2.0.1-1/libexpat-2.0.1-1-mingw32-dev.tar.gz/download) into your DevKit folder first.
 
 ## Usage
 
